@@ -59,13 +59,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-
-
-  # Change mail delvery to either :smtp, :sendmail, :file, :test
-  
-
-  # config.action_mailer.perform_deliveries = true
-
   #Action mailer delivery
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host:'localhost:3000' }
@@ -80,4 +73,6 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto: true
     }
+
+    Paperclip.options[:command_path] = "/usr/local/bin/"
 end

@@ -1,8 +1,10 @@
 class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
-      t.string :p_name
-      t.integer :p_price
+      t.string :name
+      t.decimal :price
+      t.references :category, foreign_key: true
+      t.text :description
 
       t.timestamps
     end
